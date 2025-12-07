@@ -4,10 +4,11 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Bloemfondu: TSC</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 <style>
 body {
 margin: 0;
-font-family: Arial, sans-serif;
+font-family: 'Poppins', sans-serif;
 background: #f4f4f4;
 display: flex;
 flex-direction: column;
@@ -22,59 +23,74 @@ justify-content: space-between;
 align-items: center;
 }
 .logo {
-font-size: 1.5rem;
-font-weight: bold;
+font-size: 1.4rem;
+font-weight: 700;
 }
 nav a {
 color: white;
 text-decoration: none;
 margin-left: 20px;
-font-size: 1rem;
+font-size: 0.95rem;
 }
 nav a:hover {
 text-decoration: underline;
 }
 
 
+.banner {
+width: 100%;
+height: 220px;
+background: url('banner2.png') center/cover no-repeat;
+}
+
+
 .container {
 flex: 1;
-display: grid;
-grid-template-columns: 1fr 1fr;
+display: flex;
+justify-content: center;
 align-items: center;
-padding: 40px;
+padding: 20px;
+}
+
+
+.table-box {
+display: grid;
+grid-template-columns: 1fr auto;
+gap: 20px;
+align-items: center;
+padding: 25px 35px;
+background: white;
+border-radius: 14px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+width: 60%;
 }
 
 
 .left-box {
-font-size: 3rem;
-font-weight: bold;
+font-size: 2.3rem;
+font-weight: 600;
 color: #222;
 }
 
 
-.right-box {
-display: flex;
-justify-content: center;
-}
-
-
 .cool-button {
-padding: 20px 40px;
-font-size: 1.5rem;
+padding: 14px 28px;
+font-size: 1.2rem;
 font-weight: bold;
 color: white;
-background: pink;
-border: 4px solid white;
-outline: 4px solid pink;
-border-radius: 12px;
+background: #ff4fa3; /* More vibrant pink */
+border: 3px solid white;
+outline: 3px solid #ff4fa3;
+border-radius: 10px;
 cursor: pointer;
 text-decoration: none;
-transition: transform 0.2s ease-in-out;
+transition: transform 0.2s ease-in-out, box-shadow 0.2s;
 }
 
 
 .cool-button:hover {
-transform: scale(1.07);
+transform: scale(1.08);
+box-shadow: 0 0 12px rgba(255,79,163,0.6);
 }
 
 
@@ -98,9 +114,12 @@ padding: 15px;
 </header>
 
 
+<div class="banner"></div>
+
+
 <div class="container">
+<div class="table-box">
 <div class="left-box">Bloem Eiland</div>
-<div class="right-box">
 <a href="bloem.html" class="cool-button">Check out!</a>
 </div>
 </div>
