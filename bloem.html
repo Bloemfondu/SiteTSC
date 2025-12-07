@@ -1,107 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bloem Eiland</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
-/* Visible, debug-friendly styles to avoid a blank page */
-:root{
---pink: #ff4fa3;
---bg: #f4f4f6;
---card: #ffffff;
---muted: #666;
-}
-html,body{height:100%;}
 body {
-margin: 0;
-font-family: 'Poppins', Arial, sans-serif;
-background: var(--bg);
-color: #111;
--webkit-font-smoothing:antialiased;
--moz-osx-font-smoothing:grayscale;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #ffffff;
 }
+
+/* Top bar */
 header {
-background: #1e1e1e;
-color: #ffffff;
-padding: 12px 18px;
-display: flex;
-justify-content: space-between;
-align-items: center;
+    background: #1e1e1e;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.logo {font-size:1.25rem;font-weight:700}
-nav a{color:white;text-decoration:none;margin-left:16px;font-size:0.95rem}
-nav a:hover{text-decoration:underline}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+nav a:hover {
+    text-decoration: underline;
+}
 
+/* Banner */
+.banner {
+    width: 100%;
+    height: 180px;
+    background: url("banner2.png") center/cover no-repeat;
+    border-bottom: 3px solid #ff1ea8;
+}
+.banner:empty {
+    background: #f5f5f5;
+    border: 2px dashed #ccc;
+}
 
-/* Main wrapper keeps content centered and visible */
-.wrapper{max-width:1100px;margin:28px auto;padding:0 16px}
+/* Card/Table styling */
+.card {
+    width: 80%;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    text-align: center;
+}
 
+/* Pink button */
+.button {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 8px;
+    border: 3px solid white;
+    outline: 3px solid #ff1ea8;
+    background: #ff35c9;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.button:hover {
+    background: #ff0fb8;
+}
 
-/* Banner area (if image missing it will have a visible background color) */
-.hero-banner{height:140px;background:linear-gradient(90deg,#fff 0%,#fff 100%);border-radius:12px;display:block;margin-bottom:20px;overflow:hidden;display:flex;align-items:center;justify-content:center;border:2px dashed rgba(0,0,0,0.04)}
-.hero-banner img{width:100%;height:100%;object-fit:cover;display:block}
-
-
-/* Content card */
-.content-card{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(12,20,30,0.06);margin-bottom:20px}
-
-
-/* Placeholder image centered */
-.thumb{width:200px;height:200px;border-radius:10px;object-fit:cover;display:block;margin:0 auto 14px;border:1px solid rgba(0,0,0,0.06)}
-
-
-/* Paragraphs spacing */
-.content-card p{color:var(--muted);line-height:1.6;margin:10px 0}
-
-
-/* Buttons */
-.btn{display:inline-block;padding:10px 22px;border-radius:10px;font-weight:700;text-decoration:none}
-.btn-pink{background:var(--pink);color:#fff;border:3px solid #fff;outline:3px solid var(--pink);box-shadow:0 6px 18px rgba(255,79,163,0.12)}
-.btn-pink:hover{transform:translateY(-3px);box-shadow:0 18px 36px rgba(255,79,163,0.18)}
-
-
-/* Line table card */
-.line-card{background:var(--card);padding:12px;border-radius:12px;box-shadow:0 6px 18px rgba(12,20,30,0.06)}
-table{width:100%;border-collapse:collapse}
-th,td{padding:10px 8px;border-bottom:1px solid #eee;text-align:left}
-th{font-weight:700}
-.line-link{color:var(--pink);font-weight:600;text-decoration:none}
-.line-link:hover{text-decoration:underline}
-
-
-/* Small screens */
-@media (max-width:720px){
-.thumb{width:160px;height:160px}
+/* Second table */
+.table-list {
+    width: 90%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+.table-list th, .table-list td {
+    padding: 14px;
+    border-bottom: 1px solid #ddd;
+}
+.table-list th {
+    background: #ff35c9;
+    color: white;
+    font-size: 1.1rem;
+}
+.table-list a {
+    color: #ff35c9;
+    font-weight: 600;
+    text-decoration: none;
+}
+.table-list a:hover {
+    text-decoration: underline;
 }
 </style>
+
 </head>
 <body>
+
 <header>
-<div class="logo">Bloemfondu: TSC</div>
-<nav>
-<a href="index.html">Home</a>
-<a href="routes.html">Routes</a>
-<a href="#trains">Trains</a>
-<a href="#contact">Discord</a>
-</nav>
+    <div class="logo">Bloemfondu: TSC</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="routes.html">Routes</a>
+        <a href="trains.html">Trains</a>
+        <a href="contact.html">Discord</a>
+    </nav>
 </header>
 
+<div class="banner"></div>
 
-<div class="wrapper">
-<!-- optional top banner (replace banner2.png in your repo to show it) -->
-<div class="hero-banner">
-<img src="banner2.png" alt="Banner" onerror="this.style.display='none'">
-<div style="position:absolute;color:#888;font-weight:600;">(banner2.png)</div>
+<!-- First table/card -->
+<div class="card">
+    <img src="placeholder.png" alt="Placeholder" width="200" height="200"
+    onerror="this.style.display='none'">
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    <p>Duis aute irure dolor in reprehenderit in voluptate velit.</p    >
+    <p>Excepteur sint occaecat cupidatat non proident.</p>
+
+    <a class="button" href="download.zip">Download</a>
 </div>
 
+<!-- Second table -->
+<table class="table-list">
+<tr>
+    <th>Line</th>
+    <th>Island Line</th>
+</tr>
 
-<!-- main white content card -->
-<section class="content-card">
-<img class="thumb" src="placeholder.png" alt="Placeholder image" onerror="this.style.background='#f0f0f0';this.src='';">
+<tr>
+    <td><a href="L168.html">L168</a></td>
+    <td>Le1</td>
+</tr>
+<tr>
+    <td><a href="L169.html">L169</a></td>
+    <td>Le2</td>
+</tr>
+<tr>
+    <td><a href="L170.html">L170</a></td>
+    <td>Le3</td>
+</tr>
+<tr>
+    <td><a href="L171.html">L171</a></td>
+    <td>Le4</td>
+</tr>
+<tr>
+    <td><a href="L172.html">L172</a></td>
+    <td>Le5</td>
+</tr>
 
+</table>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+</body>
+</html>
